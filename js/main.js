@@ -33,9 +33,9 @@ async function fetchImages(query,page = 1,perPage = 20) {
         console.log(photos);
         localStorage.setItem('pexelsPhotos', JSON.stringify(images)); 
         currentPage=page;
-        currentQuery=query || 'curated';
-        displayImages(images);
-        loader.classList.add('d-none');     
+        currentQuery=query || 'curated'
+        loader.classList.add('d-none');;
+        displayImages(images);      
       } catch (err) {
         console.error('Error:', err);
       }
@@ -110,10 +110,10 @@ function nextLightbox(){
 
 btnsfilter.forEach(btn => {
   btn.addEventListener('click', () => {
+    loader.classList.remove('d-none');
     const filter = btn.dataset.filter;
     if (filter !== currentFilter) {
       btnsfilter.forEach(otherBtn => otherBtn.classList.remove('active'));
-      btn.classList.add('active');
       btn.classList.add('active');
       currentFilter = filter;
       currentPage = 1;
@@ -123,6 +123,8 @@ btnsfilter.forEach(btn => {
 });
 
 btnsearch.addEventListener('click', () => {
+  btnsfilter.forEach(btn => btn.classList.remove('active'));
+  loader.classList.remove('d-none');
   const query = searchInput.value;
   if (query) {
     fetchImages(query);
@@ -135,13 +137,16 @@ btnsearch.addEventListener('click', () => {
 
 btnPagenavigation.forEach(btn => {
   btn.addEventListener('click', () => {
+    
     const page = btn.dataset.page;
     if (page==="Previous" && currentPage > 1) {
       currentPage--;
       fetchImages(currentFilter, currentPage);
+      loader.classList.remove('d-none');
     } else if (page==="Next") {
       currentPage++;
       fetchImages(currentFilter, currentPage);
+      loader.classList.remove('d-none');
     }
   });
 });
