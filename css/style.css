@@ -1,0 +1,242 @@
+* {
+    color: var(--font-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {  
+    --background-color: #f9f9f9 ;
+    --navbar-color: #1c2526;
+    --font-color: #ffffff; 
+    --hover-color:#ff6f61;
+    --home-background:#1c2526;
+    --darkmode-color:  #1a1a1a;
+}
+
+body {
+    background-color:var(--background-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color:var(--darkmode-color);
+    color: var(--font-color);
+}
+
+.fontColor{
+    color: var(--font-color);
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+}
+.fontColor:hover{
+    color: var(--hover-color);
+}
+.navColor{
+    background-color: var(--navbar-color);
+    padding: 10px;
+}
+.homeContainer{
+    background: linear-gradient(135deg,var(--hover-color) ,var(--home-background));    
+}
+.bgColor{
+    background-color: var(--home-background);
+}
+.homefont{
+    font-size: 2.5em; 
+}
+.searchContainer{
+    max-width: 500px;
+}
+
+#searchInput{
+    width: 100%;
+    font-size: 1em;
+    padding: 12px;
+}
+#searchInput::placeholder{
+    color: #828181;
+}
+#btnsearch{
+    background-color: var(--hover-color);  
+}
+#btnsearch:hover{
+    background-color: var(--home-background); 
+}
+.btnfilter{
+    background-color: var(--home-background);
+    font-size: 0.9em;   
+    transition: all 0.3s;
+    padding: 10px 20px;
+}
+.btnfilter:hover{
+    background-color: var(--hover-color); 
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    background-color: var(--hover-color);
+}
+.hoverfontcolor{
+    color: var(--hover-color);
+}
+.icon{
+    font-size: 2em;
+    color: var(--font-color);
+}
+.icon:hover{
+    color: var(--hover-color);
+}
+.favouritebtn{
+    top: 0px;
+    right: 3px;  
+    display: none;
+    transition: all 0.5s;
+}
+.favouriteicon{
+    font-size: 1.5em;
+    color: var(--font-color);
+}
+.favouriteiconhover{
+    color: var(--hover-color);
+    font-size: 1.5em;
+}
+.name{
+    bottom: 0px;
+    left: 17px;
+    color: var(--font-color);
+    background-color: #121212d3;
+    padding-inline: 5px;
+}
+.hovercolimage:hover .favouritebtn{
+    display: block; 
+}
+.hoverimg{
+    width: 100%;
+    display: block;
+    transition: all 0.6s;
+}
+.hoverimg:hover{
+    transform: scale(1.05);
+}
+
+#lightBox{
+    background-color: #000000d7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+#lightbox-img{
+    max-width: 100%;
+    max-height: 90%;
+}
+.close-btn{
+    top: 0px;
+    right: 0px;
+    font-size: 1.5em;
+    color: var(--font-color);
+}
+.previous-btn{
+    top: 50%;
+    left: 0px;
+    font-size: 1.5em;
+    color: var(--font-color);
+}
+.next-btn{
+    top: 50%;
+    right: 0px;
+    font-size: 1.5em;
+    color: var(--font-color);
+}
+.gallery-masonry {
+    column-count: 3;
+    column-gap: 17px;
+    min-height: 14dvh;
+}
+.masonry-item {
+  break-inside: avoid;
+  width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 17px;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid var(--font-color);
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid var(--hover-color);
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+.loaderdiv{
+    background-color: #1a1a1a48;
+}
+
+@media (max-width: 768px) {
+  .gallery-masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) and (min-width: 202px) {
+  .gallery-masonry {
+    column-count: 1;
+  }
+  .btnfilter{
+        margin-block: 5px;
+    }
+}
+
+@media (max-width: 203px) and (min-width: 123px) {
+  .gallery-masonry {
+        column-count: 1;
+    }
+    .homefont{
+        font-size: 1em; 
+    }
+    .btnfilter{
+        font-size: 0.7em;   
+        padding: 10px;
+        margin-block: 5px;
+    }
+
+}
+
+@media (max-width: 124px) {
+  .gallery-masonry {
+        column-count: 1;
+    }
+  .homefont{
+        font-size: 1em; 
+    }
+    .btnfilter{
+        font-size: 0.5em;   
+        padding:0px;
+        margin-block: 5px;
+    }
+    #btnsearch{
+       font-size: 0.5em;   
+        padding:0px;
+    }
+}

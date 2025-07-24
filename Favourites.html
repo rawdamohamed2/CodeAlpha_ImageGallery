@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="icon" href="images/image-gallery.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/Favouritestyle.css">
+</head>
+<body>
+
+    <header id="header" class="position-relative py-5 ">
+        <h1 class="text-center headertitle">Your Favourite Images</h1>
+        <div class="btndarkmode position-absolute">
+            <button id="theme-toggle" aria-label="Toggle dark mode" class="fs-4 border-0 bg-transparent">🌙</button>
+        </div>
+        <a type="button" href="index.html" class="btn-close btn-close-white position-absolute closebtn" aria-label="Close"></a>
+    </header>
+
+    <section id="favouriteImages" class="">
+        <div class="container-fluid">
+            <div class="filterBox text-center my-4">
+                <button type="button" class="btn btnfilter text-white rounded-5 mx-1 active border-0" data-filter="All">All</button>
+                <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="curated">Curated</button>
+                <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Nature">Nature</button>
+                <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Art">Art</button>
+                <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Travel">Travel</button>
+                <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Architecture">Architecture</button>
+                <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Other">Other</button>
+            </div>
+
+            <div id="favouriteBox" class="py-4 gallery-masonry">
+                
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/Favourites.js"></script>
+</body>
+</html>

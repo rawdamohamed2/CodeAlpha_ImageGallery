@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="icon" href="images/image-gallery.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <main>
+        <header id="navbar">
+            <nav class="navbar navbar-expand-lg navColor shadow-sm px-2 fixed-top z-1">
+                <div class="container-fluid">
+                    <a class="navbar-brand fs-2 fw-bold text-white" href="#">Image Gallery</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav navUl ms-auto mb-2 mb-lg-0 ps-md-5 ">
+                            <li class="nav-item">
+                                <a class="nav-link fontColor fw-medium " aria-current="page" href="#Home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fontColor fw-medium" href="#Gallery">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fontColor fw-medium" href="Favourites.html">Your favourite</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fontColor fw-medium" href="#contact">contact</a>
+                            </li>
+                        </ul>
+                        <div class="btndark ms-auto">
+                            <button id="theme-toggle" aria-label="Toggle dark mode" class="fs-4 border-0 bg-transparent">🌙</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section id="Home" class="py-5 homeContainer">
+            <div class="container-fluid text-center  mt-5 pt-5">
+                <h1 class="fontColor fw-bold homefont ">Explore a World of Stunning Images</h1>
+                <div class="searchContainer m-auto p-2">
+                    <input id="searchInput" class="form-control rounded-5 shadow-sm" type="search" placeholder='Search for images (e.g., nature, art)' aria-label="Search for images"/>
+                    <button id="btnsearch" class="btn rounded-5 text-white mt-3 shadow-sm" type="submit">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="Gallery">
+            <div class="container-fluid">
+                <div class="filterBox text-center my-4">
+                    <button type="button" class="btn btnfilter text-white rounded-5 mx-1 active border-0" data-filter="curated">All</button>
+                    <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Nature">Nature</button>
+                    <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Art">Art</button>
+                    <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Travel">Travel</button>
+                    <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Architecture">Architecture</button>
+                </div>
+                <div id="loader" class="loaderdiv position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
+                    <span class="loader"> </span>
+                </div>
+                <div id="galleryBox" class="py-4 gallery-masonry">
+                    
+                </div>
+                <div class="Pagenavigation d-flex justify-content-between py-2">
+                    <button class="btn btn-Pagenavigation btnfilter text-white rounded-5" aria-label="Previous page" data-page="Previous">Previous</button>
+                    <button class="btn btn-Pagenavigation btnfilter text-white rounded-5 " aria-label="next page" data-page="Next">Next</button>
+                </div>
+            </div>
+
+        </section>
+
+        <footer id="contact" class="py-4 bgColor">
+            <p class="text-center fontColor">© 2025 Image Gallery. Powered by <a href="https://www.pexels.com" target="_blank">Pexels</a>.</p>
+            <div class="container-fluid text-center contactContainer">
+                <div class="footerIcon text-center">
+                    <a href="https://www.linkedin.com/in/rawda-mohamed-367a77370?" class="px-1"><i class="fa-brands fa-linkedin icon"></i></a>
+                    <a href="https://github.com/rawdamohamed2" class="px-1"><i class="fa-brands fa-github icon"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <div id="lightBox" class="lightbox text-center py-5 d-none">
+            <button  class="close-btn border-0 bg-transparent position-absolute" onclick="closeLightbox()" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <button  class="previous-btn border-0 bg-transparent position-absolute" onclick="previousLightbox()" aria-label="previous"><i class="fa-solid fa-chevron-left"></i></button>
+            <img id="lightbox-img" src="images/istockphoto-517188688-1024x1024.jpg" alt="Image preview" class="mt-5 rounded-5">
+            <button  class="next-btn border-0 bg-transparent position-absolute" onclick="nextLightbox()" aria-label="next"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="lightbox-info">
+                <p id="photographer" class="text-white"></p>
+            </div>   
+        </div>
+
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
