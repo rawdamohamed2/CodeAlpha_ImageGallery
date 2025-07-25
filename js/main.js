@@ -17,7 +17,7 @@ let totalPages;
 
 async function fetchImages(query,page) {
   try {
-        const res = await fetch(`https://api.pexels.com/v1/search?page=${page?page:1}&per_page=10&query=${query?query:'curated'}`, {
+        const res = await fetch(`https://api.pexels.com/v1/search?page=${page?page:1}&per_page=11&query=${query?query:'curated'}`, {
           headers: {
             Authorization: 'RT4KC88eJi9m7MD3RDmYA3iUVfVUlCu3GP7Au6r6gXzLNECIS20jZs2X'
           }
