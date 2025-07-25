@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+    <div id="loader" class="loaderdiv heightleader position-absolute top-0 start-0 w-100 d-flex d-block justify-content-center align-items-center">
+        <span class="loader"> </span>
+    </div>
     <main>
         <header id="navbar">
             <nav class="navbar navbar-expand-lg navColor shadow-sm px-2 fixed-top z-1">
@@ -58,21 +60,19 @@
         <section id="Gallery">
             <div class="container-fluid">
                 <div class="filterBox text-center my-4">
-                    <button type="button" class="btn btnfilter text-white rounded-5 mx-1 active border-0" data-filter="curated">All</button>
-                    <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Nature">Nature</button>
-                    <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Art">Art</button>
-                    <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Travel">Travel</button>
-                    <button type="button" class="btn btnfilter text-white rounded-5 mx-1 border-0" data-filter="Architecture">Architecture</button>
+                    <button type="button" class="btn btnfilter filter text-white rounded-5 mx-1 active border-0" data-filter="curated">All</button>
+                    <button type="button" class="btn btnfilter filter text-white rounded-5 mx-1 border-0" data-filter="Nature">Nature</button>
+                    <button type="button" class="btn btnfilter filter text-white rounded-5 mx-1 border-0" data-filter="Art">Art</button>
+                    <button type="button" class="btn btnfilter filter text-white rounded-5 mx-1 border-0" data-filter="Travel">Travel</button>
+                    <button type="button" class="btn btnfilter filter text-white rounded-5 mx-1 border-0" data-filter="Architecture">Architecture</button>
                 </div>
-                <div id="loader" class="loaderdiv position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center">
-                    <span class="loader"> </span>
-                </div>
+                
                 <div id="galleryBox" class="py-4 gallery-masonry">
                     
                 </div>
-                <div class="Pagenavigation d-flex justify-content-between py-2">
-                    <button class="btn btn-Pagenavigation btnfilter text-white rounded-5" aria-label="Previous page" data-page="Previous">Previous</button>
-                    <button class="btn btn-Pagenavigation btnfilter text-white rounded-5 " aria-label="next page" data-page="Next">Next</button>
+                <div class=" d-flex justify-content-between py-2">
+                    <button class="btn btnfilter btnPagenavigation text-white rounded-5" aria-label="Previous page" data-page="Previous" >Previous</button>
+                    <button class="btn btnfilter btnPagenavigation text-white rounded-5 " aria-label="next page" data-page="Next" >Next</button>
                 </div>
             </div>
 
@@ -88,14 +88,24 @@
             </div>
         </footer>
 
-        <div id="lightBox" class="lightbox text-center py-5 d-none">
-            <button  class="close-btn border-0 bg-transparent position-absolute" onclick="closeLightbox()" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-            <button  class="previous-btn border-0 bg-transparent position-absolute" onclick="previousLightbox()" aria-label="previous"><i class="fa-solid fa-chevron-left"></i></button>
-            <img id="lightbox-img" src="images/istockphoto-517188688-1024x1024.jpg" alt="Image preview" class="mt-5 rounded-5">
-            <button  class="next-btn border-0 bg-transparent position-absolute" onclick="nextLightbox()" aria-label="next"><i class="fa-solid fa-chevron-right"></i></button>
-            <div class="lightbox-info">
-                <p id="photographer" class="text-white"></p>
-            </div>   
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen ">
+                <div id="lightBox" class="modal-content border-0 bg-transparent">
+                    <div class="modal-header border-0 my-2 ">
+                        <button type="button" class="btn-close btn-close-white closebtn" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex justify-content-center align-items-center">
+                        <button  class="previous-btn border-0 bg-transparent position-absolute" onclick="previousLightbox()" aria-label="previous"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div class="lightbox-info">
+                            <img id="lightbox-img" src="" alt="Image preview" class="rounded-5" loading="lazy" >
+                            <p id="photographer" class="text-white text-center"></p>
+                        </div> 
+                        <button  class="next-btn border-0 bg-transparent position-absolute" onclick="nextLightbox()" aria-label="next"><i class="fa-solid fa-chevron-right"></i></button>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
 
     </main>
